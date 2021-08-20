@@ -4,9 +4,10 @@ int main()
 {
     double page_matrix[10][10] = { 0, }, page_matrix_dangling[10][10] = { 0, };
     double  page_value[10] = { 0, }, page_value_dangling[10] = { 0, };
-    int num, a, b, i, j, outline[10] = { 0, };
+    int num, a, b, i, j, outline[10] = { 0, }, num2;
     scanf("%d", &num);
-    for (i = 0; i < 9; i++)
+    scanf("%d", &num2);
+    for (i = 0; i < num2; i++)
     {
         page_value[i] = 1.0 / num;
         page_value_dangling[i] = 1.0 / num;
@@ -31,7 +32,7 @@ int main()
             {
                 for (int k = 0; k < num; k++)
                 {
-                    page_matrix_dangling[j][i] = 1.0 / 4.0;
+                    page_matrix_dangling[j][i] = 1.0 / (float)num;
                 }
             }
             else if (abs(page_matrix_dangling[j][i]-1.0) < 0.5)
